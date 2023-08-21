@@ -16,10 +16,9 @@ function searchHandler(e) {
 
 function showSuggestions(results) {
 	suggestions.innerHTML = '' ;
-
 	return results.forEach(v => {
 		let sugg = document.createElement('li');
-		sugg.innerText = v;
+		sugg.innerHTML = v.toLowerCase().replaceAll(input.value.toLowerCase(),`<b>${input.value.toLowerCase()}</b>`);
 		suggestions.append(sugg);
 	})
 }
