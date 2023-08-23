@@ -18,7 +18,9 @@ function showSuggestions(results) {
 	suggestions.innerHTML = '' ;
 	return results.forEach(v => {
 		let sugg = document.createElement('li');
+		// below is my not so elegant attempt at making the letters that match the input have bold text.
 		sugg.innerHTML = v.toLowerCase().replaceAll(input.value.toLowerCase(),`<b>${input.value.toLowerCase()}</b>`);
+		
 		suggestions.append(sugg);
 	})
 }
